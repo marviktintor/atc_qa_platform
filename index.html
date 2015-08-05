@@ -25,6 +25,21 @@
     	   <script type="text/javascript" src="js_api.js"></script>
     	   
     	    <script type="text/javascript" src="scripts.js"></script>
+    	    
+    	    
+    	  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    		<script type="text/javascript" src="js/materialize.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollzer.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--  [if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			 <script src="assets/js/main.js"></script> 
+			 
+			  <script type="text/javascript" src="js_api.js"></script>
+    	   
+    	    <script type="text/javascript" src="scripts.js"></script>
 	</head>
 	<body>
 
@@ -46,14 +61,20 @@
 								    </form>
 						</div>
 						
-						<section style="width:50% ; float:left; margin-top:-8px;"  id="section_questions">
-							 
-						</section>
-						<section style="width:50%; float:right; height:100px;margin-top:-10px;" id="section_answers" >
+						
+						<section id="section_questions" style="width:50%; float:left; margin-top:-10px;" >
+							
 						
 							
 						</section>
-						
+						<section style="width:50% ; float:right; margin-top:-8px;"   >
+							<div>
+								<textarea id="id_answer" placeholder="Your Answer" class="input-field col s6" style="color:#9e9e9e;width:95%; height:20%;resize:none; border:2px solid #4acaa8;border-radius:5px "></textarea> 
+											
+								<a id="id_button_post_answer" class="btn-floating waves-effect waves-light teal lighten-2 right" style="margin:-50px 35px 60px 0px; "><i class="material-icons">+</i></a>
+							</div>
+							 <section id="section_answers"></section>
+						</section>
 					</div>
 
 				<!-- Footer -->

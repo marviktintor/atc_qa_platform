@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+ <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+	      <!--Let browser know website is optimized for mobile-->
+	      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	      
+	     
+    	  
+    	  <link type="text/css" rel="stylesheet" href="project/custom.css" />
+    	  
+</head>
+<body>
+
+<div class="left" style="float:left;" id="created_ui">
+
+</div>
+<div class="right"  style="float:left;" >
+<textarea placeholder="Write Code" id="editor_pane" style="width:500px; height:500px; margin-right:50px;"></textarea>
+</div>
+</body>
+
+<script>
+window.onload = function(){
+	document.getElementById('editor_pane').addEventListener('input',injectCode,false);
+}
+
+function injectCode(){
+	document.getElementById('created_ui').innerHTML = document.getElementById('editor_pane').value;
+}
+</script>
+</html>

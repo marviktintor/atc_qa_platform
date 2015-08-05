@@ -51,6 +51,7 @@ function setEventListenersForLogin(){
 }
 function setEventListeners(){
 	document.getElementById('id_input_search').addEventListener('input', search, false);
+	document.getElementById('id_button_post_answer').addEventListener('click', postAnswer, false);
 	//$('id_refresh_view').addEventListener('click',refreshView,false);
 	//document.getElementById('id_button_post_question').addEventListener('click',postQuestion,false);
 		
@@ -128,13 +129,15 @@ function postQuestion(){
 function postAnswer(){
 	question_id = localStorage.getItem("question_id");
 	if(question_id == 'null'){
-		setHtml('answer_errors',"Please click on a question to provide its answer");
-		$('answer_errors').style.color="#FF0000";
+		/*setHtml('answer_errors',"Please click on a question to provide its answer");
+		$('answer_errors').style.color="#FF0000";*/
+		Materialize.toast('Please click on a question to provide its answer.', 4000);
 	}else{
 		var answer = getValue('id_answer');
 		if(answer== ""){
-			setHtml('answer_errors',"Please enter your answer");
-			$('answer_errors').style.color="#FF0000";
+			/*setHtml('answer_errors',"Please enter your answer");
+			$('answer_errors').style.color="#FF0000";*/
+			Materialize.toast('Please enter your answer.', 4000);
 		}else{
 			var user = atcGetCache("atc_qa_user");
 			params = "intent="+INTENT_POST_QUESTION_ANSWER+"&action=insert&question_id="+question_id+"&answer="+answer+"&user="+user;
@@ -282,6 +285,7 @@ function onReadyStateChange(action,method,url,params,request,intent){
 		}
 		if(intent == INTENT_POST_QUESTION_ANSWER){
 			setHtml('section_answers', request.responseText);
+			setValue('id_answer', '');
 			loadQuestions();
 		}
 	}
